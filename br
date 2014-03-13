@@ -1,0 +1,15 @@
+#!/usr/bin/env node
+
+'use strict';
+
+var stdio = require('stdio');
+var path = require('path');
+var spawn = require('child_process').spawn;
+
+process.title = 'br';
+
+var rootPath = '/Applications/XAMPP/xamppfiles/htdocs/';
+var currentPath = path.resolve();
+var browserPath = 'http://10.1.2.146:8888/' + currentPath.replace(rootPath, '');
+
+spawn('open', [browserPath]);

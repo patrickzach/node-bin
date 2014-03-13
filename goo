@@ -1,0 +1,18 @@
+#!/usr/bin/env node
+
+'use strict';
+
+var spawn = require('child_process').spawn;
+var stdio = require('stdio');
+
+process.title = 'goo';
+
+var ops = stdio.getopt({
+    'query': {key: 'q', description: 'Query to search for'},
+});
+
+if(typeof ops.query != 'undefined'){
+
+	spawn('open', ['https://www.google.at/search?q=' + ops.args]);
+
+}
